@@ -1,0 +1,104 @@
+/*Generales*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 25px;
+    color: #A09FB1;
+    font-weight: 600;
+}
+/*Utilidades*/
+.button {
+    padding: 7px;
+    border: none;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+.bg-gray {
+    background-color: #6E707A;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/*Contenedor principal*/
+.contenedor-principal {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+/*Sección Clima*/
+
+.seccion-clima {
+    background-color: #1E213A;
+    background-repeat: no-repeat;
+    grid-column: 1 / 5;
+    padding: 20px;
+}
+
+.contenido-seccion-clima {
+    width: 90%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.busqueda-ciudades {
+    display: flex;
+    justify-content: space-between;
+}
+
+.busqueda-ciudades i {
+    align-self: center;
+    font-size: 25px;
+}
+
+.clima-principal {
+    margin-top: 80px;
+}
+
+.clima-principal img {
+    height: 170px;
+}
+
+.clima-principal h1 {
+    margin-top: 50px;
+}
+
+.clima-principal h3 {
+    margin-top: 80px;
+}
+
+.clima-principal div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.clima-principal div > p {
+    margin-top: 10px;
+}
+
+.clima-principal div > p {
+    font-size: 15px;
+    color: #88869D;
+}
