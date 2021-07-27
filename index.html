@@ -12,22 +12,22 @@
 </head>
 <body>
     <div class="form-container">
-        <form class="form-search" action="">
+        <form class="form-search" action="" id="seccion-formulario">
             <div class="search-and-close">
                 <h3>Busca tu ciudad!</h3>
-                <i class="fas fa-times-circle"></i>
+                <i class="fas fa-times-circle" id="cerrar-seccion-busqueda"></i>
             </div>
             <div class="cont-form">
-                <input type="text" placeholder="Ciudad">
-                <select name="" id="">
-                    <option>Seleccione el país</option>
-                    <option value="">Perú</option>
-                    <option value="">Chile</option>
-                    <option value="">Brasil</option>
-                    <option value="">Argentina</option>
-                    <option value="">Colombia</option>
+                <input type="text" placeholder="Ciudad" id="ciudad">
+                <select name="" id="pais">
+                    <option value="">Seleccione el país</option>
+                    <option value="PE">Perú</option>
+                    <option value="CL">Chile</option>
+                    <option value="BR">Brasil</option>
+                    <option value="AR">Argentina</option>
+                    <option value="CO">Colombia</option>
                 </select>
-                <input type="submit" value="Buscar">
+                <input type="submit" value="Buscar" id="enviar">
             </div>
         </form>
     </div>
@@ -35,16 +35,16 @@
         <section class="seccion-clima">
             <div class="contenido-seccion-clima">
                 <div class="busqueda-ciudades">
-                    <button class="button bg-gray pointer">Busca ciudades</button>
+                    <button class="button bg-gray pointer" id="buscar-ciudades">Busca ciudades</button>
                     <i class="fas fa-compass pointer"></i>
                 </div>
                 <div class="clima-principal">
                     <img src="img/Shower.png" alt="">
-                    <h1>15 &deg;C</h1>
-                    <h3>Lluvioso</h3>
+                    <h1 id="clima-principal">15 &deg;C</h1>
+                    <h3 id="descripcion" class="capitalize">Lluvioso</h3>
                     <div>
-                        <p>Hoy - Viernes 5, Jun </p>
-                        <p><i class="fas fa-map-marker-alt"></i> Lima</p>
+                        <p id="fecha-hoy">Hoy - Viernes 5, Jun </p>
+                        <p id="ciudad-actual"><i class="fas fa-map-marker-alt"></i> Lima</p>
                     </div>
                 </div>
             </div>
@@ -134,6 +134,6 @@
     </main>
 
     <script src="https://kit.fontawesome.com/57888ec9eb.js" crossorigin="anonymous"></script>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

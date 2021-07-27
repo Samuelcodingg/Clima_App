@@ -41,6 +41,9 @@ h3 {
     cursor: pointer;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
 
 /*Contenedor principal*/
 .contenedor-principal {
