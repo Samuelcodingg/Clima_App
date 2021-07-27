@@ -154,20 +154,23 @@ h3 {
     padding: 10px;
 }
 
+.card-day > div:first-child > p {
+    font-size: 15px;
+}
+
 .img-day {
     height: 50px;
 }
 
 .grades-day {
     margin: 15px 10px 0px 10px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .grades-day p {
     font-size: 15px;
     font-weight: 500;
     color: #A09FB1;
+    text-align: center;
 }
 
 .stats-today {
