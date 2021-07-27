@@ -102,3 +102,96 @@ h3 {
     font-size: 15px;
     color: #88869D;
 }
+
+/*Seccion estadísticas*/
+
+.seccion-stats {
+    background-color: #100E1D;
+    grid-column: 5 / 13;
+    padding: 30px;
+}
+
+.seccion-stats > div {
+    width: 80%;
+    margin: 0px auto;
+}
+
+.grades {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.grades > div {
+    font-size: 13px;
+    background-color: #585676;
+    padding: 8px;
+    border-radius: 50%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.grades > div:first-child {
+    margin-right: 25px;
+    color: #110E3C;
+    background-color: #E7E7EB;
+}
+
+.week {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin-top: 50px;
+    column-gap: 20px;
+
+}
+
+.card-day {
+    background-color: #1E213A;
+    text-align: center;
+    padding: 10px;
+}
+
+.img-day {
+    height: 50px;
+}
+
+.grades-day {
+    margin: 15px 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.grades-day p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #A09FB1;
+}
+
+.stats-today {
+    margin-top: 40px;
+}
+
+.stats-today h3{
+    color: white;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    margin-top: 40px;
+    gap: 30px;
+}
+
+.stat {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #1E213A;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 50px;
+}
