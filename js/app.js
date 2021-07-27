@@ -6,20 +6,20 @@ const enviar = document.querySelector('#enviar');
 const actual = new Date();
 const fechaHoy = {
     dia: obtenerDia(actual.getDay()),
-    numDia: actual.getDate(),
-    mes: obtenerMes(actual.getMonth()),
+    numDia: obtenerNumDia(actual.getDate()),
+    mes: obtenerMes(actual.getMonth(),actual.getDate()),
     dia1: obtenerDia(actual.getDay()+2),
-    numDia1: actual.getDate()+2,
-    mes1: obtenerMes(actual.getMonth()+2),
+    numDia1: obtenerNumDia(actual.getDate()+2),
+    mes1: obtenerMes(actual.getMonth(),actual.getDate()+2),
     dia2: obtenerDia(actual.getDay()+3),
-    numDia2: actual.getDate()+3,
-    mes2: obtenerMes(actual.getMonth()+3),
+    numDia2: obtenerNumDia(actual.getDate()+3),
+    mes2: obtenerMes(actual.getMonth(),actual.getDate()+3),
     dia3: obtenerDia(actual.getDay()+4),
-    numDia3: actual.getDate()+4,
-    mes3: obtenerMes(actual.getMonth()+4),
+    numDia3: obtenerNumDia(actual.getDate()+4),
+    mes3: obtenerMes(actual.getMonth(),actual.getDate()+4),
     dia4: obtenerDia(actual.getDay()+5),
-    numDia4: actual.getDate()+5,
-    mes4: obtenerMes(actual.getMonth()+5),
+    numDia4: obtenerNumDia(actual.getDate()+5),
+    mes4: obtenerMes(actual.getMonth(),actual.getDate()+5),
 }
 
 // Al cargar el DOM
@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     iniciarApp(); //Inicializado para Lima
 
     document.querySelector('#fecha-hoy').innerHTML = `Hoy - ${fechaHoy.dia} ${fechaHoy.numDia}, ${fechaHoy.mes}`;
-    document.querySelector('#d-1').innerHTML = `${fechaHoy.dia1}, ${fechaHoy.numDia1} ${fechaHoy.mes}`;
-    document.querySelector('#d-2').innerHTML = `${fechaHoy.dia2}, ${fechaHoy.numDia2} ${fechaHoy.mes}`;
-    document.querySelector('#d-3').innerHTML = `${fechaHoy.dia3}, ${fechaHoy.numDia3} ${fechaHoy.mes}`;
-    document.querySelector('#d-4').innerHTML = `${fechaHoy.dia4}, ${fechaHoy.numDia4} ${fechaHoy.mes}`;
+    document.querySelector('#d-1').innerHTML = `${fechaHoy.dia1}, ${fechaHoy.numDia1} ${fechaHoy.mes1}`;
+    document.querySelector('#d-2').innerHTML = `${fechaHoy.dia2}, ${fechaHoy.numDia2} ${fechaHoy.mes2}`;
+    document.querySelector('#d-3').innerHTML = `${fechaHoy.dia3}, ${fechaHoy.numDia3} ${fechaHoy.mes3}`;
+    document.querySelector('#d-4').innerHTML = `${fechaHoy.dia4}, ${fechaHoy.numDia4} ${fechaHoy.mes4}`;
 
     //Mostrar seccion busqueda
     buscarCiudades.addEventListener('click', mostrarFormularioBusqueda);
@@ -44,6 +44,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
 });
 
 //Funciones
+
+function obtenerNumDia(num){
+    if(num>31) {
+        num-=31;
+    }
+    return num;
+}
 
 function obtenerDia(num){
     switch(num){
@@ -66,7 +73,12 @@ function obtenerDia(num){
     }
 }
 
-function obtenerMes(num){
+function obtenerMes(num,date){
+
+    if(date>31){
+        num++;
+    }
+
     switch(num){
         case 0:
             return 'Ene'
@@ -152,7 +164,7 @@ function mostrarInfoClima(datos) {
     temp = temp - 273;
     document.querySelector('#clima-principal').innerHTML = `${parseInt(temp)} &deg;C`;
     document.querySelector('#descripcion').innerHTML = description;
-    document.querySelector('#ciudad-actual').innerHTML = name;
+    document.querySelector('#ciudad-actual').innerHTML =`<i class="fas fa-map-marker-alt"></i> ${name}`;
     document.querySelector('#humedad').innerHTML = `${humidity}%`;
     document.querySelector('#presion').innerHTML = `${pressure} mb`;
     document.querySelector('#visibilidad').innerHTML = `${visibility/1000} miles`;
@@ -177,6 +189,13 @@ function insertarImagenClima(description) {
             });
             break;
         case 'broken clouds':
+            document.querySelector('#imagen-clima-hoy').src = 'img/HeavyCloud.png';
+            document.querySelector('#descripcion').innerHTML = 'Nublado';
+            diasProximos.forEach(dia => {
+                dia.children[0].children[1].src = 'img/HeavyCloud.png';
+            });
+            break;
+         case 'mist':
             document.querySelector('#imagen-clima-hoy').src = 'img/HeavyCloud.png';
             document.querySelector('#descripcion').innerHTML = 'Nublado';
             diasProximos.forEach(dia => {
