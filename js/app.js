@@ -25,6 +25,8 @@ const fechaHoy = {
 // Al cargar el DOM
 document.addEventListener('DOMContentLoaded', ()=>{
 
+    iniciarApp(); //Inicializado para Lima
+
     document.querySelector('#fecha-hoy').innerHTML = `Hoy - ${fechaHoy.dia} ${fechaHoy.numDia}, ${fechaHoy.mes}`;
     document.querySelector('#d-1').innerHTML = `${fechaHoy.dia1}, ${fechaHoy.numDia1} ${fechaHoy.mes}`;
     document.querySelector('#d-2').innerHTML = `${fechaHoy.dia2}, ${fechaHoy.numDia2} ${fechaHoy.mes}`;
@@ -188,6 +190,13 @@ function insertarImagenClima(description) {
                 dia.children[0].children[1].src = 'img/LightCloud.png';
             });
             break;
+        case 'few clouds':
+            document.querySelector('#imagen-clima-hoy').src = 'img/LightCloud.png';
+            document.querySelector('#descripcion').innerHTML = 'Poco Nublado';
+            diasProximos.forEach(dia => {
+                dia.children[0].children[1].src = 'img/LightCloud.png';
+            });
+            break;            
         case 'clear sky':
             document.querySelector('#imagen-clima-hoy').src = 'img/Clear.png';
             document.querySelector('#descripcion').innerHTML = 'Despejado';
@@ -198,4 +207,8 @@ function insertarImagenClima(description) {
         default:
             break;
     }
+}
+
+function iniciarApp(){
+    consultarAPIClima('Lima','PE');
 }
