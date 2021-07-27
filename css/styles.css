@@ -41,6 +41,7 @@ h3 {
     cursor: pointer;
 }
 
+
 /*Contenedor principal*/
 .contenedor-principal {
     display: grid;
@@ -196,6 +197,76 @@ h3 {
     margin-top: 50px;
 }
 
+/*Formulario lateral desplegable*/
+.form-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(12,1fr);
+    position: absolute;
+}
+
+.form-search {
+    background-color: #1E213A;
+    width: 100%;
+    grid-column: 1 / 5;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px gray;
+    padding-top: 30px;
+    display: none;
+}
+
+.search-and-close {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    width: 80%;
+    align-items: center;
+}
+
+.search-and-close i {
+    cursor: pointer;
+}
+
+.cont-form {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.cont-form > * {
+    width: 100%;
+    margin: 5px auto;
+    height: 30px;
+    border: none;
+}
+
+.cont-form > input[type=text],
+.cont-form > select {
+    background-color: #1E213A;
+    border-bottom: 1px solid gray;
+    color: #A09FB1;
+}
+
+.cont-form > input[type=text]::placeholder {
+    color: #A09FB1;
+}
+
+.cont-form > select {
+    cursor: pointer;
+}
+
+.cont-form > input[type=text]:focus,
+.cont-form > select:focus {
+    outline: 0;
+}
+
+.cont-form > input[type=submit] {
+    background-color: #110E3C;
+    color: white;
+    cursor: pointer;
+}
+
 /*responsive*/
 
 @media (max-width: 1084px) {    
@@ -210,6 +281,10 @@ h3 {
 
 
 @media (max-width: 933px) {    
+    .form-search {
+        grid-column: 1 / 13;
+    }
+    
     .seccion-clima {
         grid-column: 1 / 13;
     }
