@@ -140,7 +140,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(5,1fr);
     margin-top: 50px;
-    column-gap: 20px;
+    column-gap: 2%;
 
 }
 
@@ -194,4 +194,41 @@ h3 {
 .copy {
     text-align: center;
     margin-top: 50px;
+}
+
+/*responsive*/
+
+@media (max-width: 1084px) {    
+    .img-day {
+        height: 40px;
+    }
+    
+    .grades-day p {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 933px) {    
+    .seccion-clima {
+        grid-column: 1 / 13;
+    }
+
+    .seccion-stats {
+        grid-column: 1 / 13;
+    }
+}
+
+@media (max-width: 594px) {
+    .week {
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 349px) {
+    .clima-principal img {
+        height: 120px;
+    }
 }
