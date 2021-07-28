@@ -53,6 +53,10 @@ function obtenerNumDia(num){
 }
 
 function obtenerDia(num){
+    if(num>7){
+        num-=7;
+    }
+
     switch(num){
         case 1:
             return 'Lun'
