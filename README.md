@@ -2,7 +2,7 @@
 Aplicación web para ver el clima en la ciudad que quieras.
 
 ## ¿Cómo se realizó?
-Este proyecto se desarrolló usando HTML5, CSS3 puro (modelo de diseño: Flexbox y Grid) sin ningún framework y JavaScript puro sin ningún framework.
+Este proyecto se desarrolló usando HTML5, CSS3 puro (modelo de diseño: Flexbox y Grid) sin ningún framework y JavaScript puro sin ningún framework. La API que se utilizó fue Current weather data API
 
 ## Objetivos cumplidos del proyecto
 * Maquetar en CSS3 puro bajo el modelo de diseño Flexbox y Grid.
